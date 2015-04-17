@@ -23,7 +23,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: <%= Rails.application.engine_name.gsub(/_application/,'').downcase %>_production
+  host: localhost
+  database: jeunesse_production
   pool: 5
-  username: postgres
-  password: postgres
+  username: 
+  password: 

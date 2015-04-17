@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
+ 
 
   # This line mounts Refinery's routes at the root of your application.
 
