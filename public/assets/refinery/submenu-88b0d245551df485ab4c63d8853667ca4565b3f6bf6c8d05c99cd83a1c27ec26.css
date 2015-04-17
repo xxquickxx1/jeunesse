@@ -1,0 +1,24 @@
+/* line 3, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-39a4306f3ebb/core/app/assets/stylesheets/refinery/submenu.css.scss */
+ul.collapsible_menu li {
+  position: relative;
+}
+/* line 5, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-39a4306f3ebb/core/app/assets/stylesheets/refinery/submenu.css.scss */
+ul.collapsible_menu li span.arrow {
+  background-repeat: no-repeat;
+  background-image: url(/assets/refinery/icons/up-103d146e95348c167c97754f74f50c725b8174d7cc80f4a7edd697c25e3e9225.gif);
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  width: 11px;
+  height: 7px;
+  cursor: pointer;
+}
+/* line 15, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-39a4306f3ebb/core/app/assets/stylesheets/refinery/submenu.css.scss */
+ul.collapsible_menu li.closed span.arrow {
+  background-image: url(/assets/refinery/icons/down-4194534035bbfa21611e47367ed8daf0ac988cec26efa905307eb9a656229366.gif);
+}
+/* line 19, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-39a4306f3ebb/core/app/assets/stylesheets/refinery/submenu.css.scss */
+ul.collapsible_menu > div {
+  width: 93%;
+  margin: 0px auto;
+}

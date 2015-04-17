@@ -1,0 +1,8 @@
+/* line 2, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-products-088411a7e213/app/assets/stylesheets/refinery/products/backend.css.scss */
+.products_properties textarea {
+  background: #fff;
+}
+/* line 5, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-products-088411a7e213/app/assets/stylesheets/refinery/products/backend.css.scss */
+.products_properties textarea[disabled] {
+  background: #F2F2F2;
+}

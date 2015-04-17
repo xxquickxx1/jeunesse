@@ -1,0 +1,72 @@
+/* line 2, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+#records .actions {
+  width: 150px;
+}
+
+/* line 6, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+a#add_image_link {
+  background: url(/assets/refinery/icons/add-d9cef296003490d54265e12e9e8eede27e5f9ba71253b8b7ab7d13a4bd60fc1f.png) no-repeat 0 6px;
+  margin-bottom: 10px;
+  line-height: 29px;
+  padding-left: 20px;
+  display: inline;
+}
+
+/* line 14, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field {
+  text-align: center;
+  position: relative;
+  margin: 5px;
+  width: 300px;
+  float: left;
+}
+/* line 21, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field .thumb {
+  height: 350px;
+  max-height: 300px;
+}
+/* line 24, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field .thumb img {
+  max-width: 300px;
+}
+/* line 28, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field .attributes {
+  display: none;
+}
+/* line 32, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field:hover div.image_actions {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  overflow: visible;
+  text-align: center;
+}
+/* line 41, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field:hover div.image_actions div.floater {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -8px;
+  width: 50px;
+  text-align: center;
+  height: 22px;
+}
+/* line 50, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field:hover div.image_actions div.floater img {
+  cursor: pointer;
+}
+/* line 56, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field div.image_actions {
+  display: none;
+}
+/* line 60, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+li.image_field.blank {
+  display: none;
+}
+
+/* line 65, /home/thomas/.rvm/gems/ruby-2.1.1/bundler/gems/refinerycms-portfolio-ddd9205f3914/app/assets/stylesheets/refinery/portfolio/admin/galleries.css.scss.erb */
+div.wym_skin_refinery {
+  opacity: 1 !important;
+}
