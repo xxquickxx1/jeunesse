@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,700,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
+
+
+
+
+  </head>
+
+  <body>
+
+<div class="fixed top-nav-fixed">
+  <nav class="top-bar " data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#"><%= image_tag('logo.png') %></a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">People</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Opportunity</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Join Us</a></li>
+      <li><a href="#">Contact</a></li>
+      <li class="has-dropdown">
+        <a href="#">Home</a>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+          <li><a href="#">Active link in dropdown</a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="#"></a></li>
+    </ul>
+  </section>
+</nav>
+</div>
+
+    <%= yield %>
+
+
+
+<footer class="footer">
+
+<div class="row text-center">
+<div class="small-9 small-centered large-6 large-centered columns">
+<h4 style="display:inline-block; border-bottom:solid 2px #5fcf80;">Contact Info</h4>
+<hr style="margin-top:-9px;">
+<p>
+Sed condimentum ante ac quam varius pretium. Nunc ornare augue et elementum. Phasellus enim libero, blandit vel sapien vitae, condimentum ultricies magna et.
+</p>
+</div>
+
+<div class="row" style="margin-top:50px;">
+    <div class="small-12 large-4 columns">
+    <p><i class="fa fa-phone fa-2x"></i> 07478397145</p>
+       </div>
+
+    <div class="small-12 large-4 columns">
+    <p><i class="fa fa-envelope fa-2x"></i> thomas.webdesign@yahoo.com</p>
+    </div>
+
+    <div class="small-12 large-4 columns">
+    <p><i class="fa fa-skype fa-2x"></i> callmemaybe</p>
+    </div>
+</div>
+
+<hr>
+
+<div class="row text-center">
+    <p>Jeunesse: <span style="color:#5fcf80;">EN</span>, PL, FR, CZ, USA, CA, IT, RUS</p>
+</div>
+
+</footer>
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+
+$(document).scroll(function() {
+    if ($(this).scrollTop() < 100) {
+        $('nav.top-bar').attr('style', 'background-color:rgba(255,255,255,0.67)');
+        $('nav.top-bar').addClass('border-bottom-nav');
+        $('section.top-bar-section ul li a').attr('style', 'color:#7f858f');
+    } else if ($(this).scrollTop() < 115) {
+        $('nav.top-bar').attr('style', 'background-color:rgba(255,255,255,0.80)');
+    } else if ($(this).scrollTop() < 130) {
+        $('nav.top-bar').attr('style', 'background-color:rgba(255,255,255,1)');
+    } 
+});
+
+$(document).scroll(function(){
+  if($(this).scrollTop() == 0){
+    $('nav.top-bar').attr('style', 'background-color: none');
+    $('nav-top-bar').addClass('animated');
+    $('section.top-bar-section ul li a').attr('style', 'color:white');
+    $('nav.top-bar').removeClass('border-bottom-nav');
+    
+  }
+});
+
+});
+
+</script>
+
+<script>
+
+$(function(){
+      var $ppc = $('.progress-pie-chart'),
+        percent = parseInt($ppc.data('percent')),
+        deg = 360*percent/100;
+      if (percent > 50) {
+        $ppc.addClass('gt-50');
+      }
+      $('.ppc-progress-fill').css('transform','rotate('+ deg +'deg)');
+      $('.ppc-percents span').html(percent+'%');
+    });
+   
+
+</script>
+
+    <script type="text/javascript" charset="utf-8" src="<%= asset_path('jquery-tubular.js') %>"></script> 
+
+<script>
+$(document).ready(function() {
+  
+                $('div.youtube-bg').tubular({videoId: 'e1v1mNyOFXU'}); // where idOfYourVideo is the YouTube ID.
+
+        });
+
+</script>
+
+
+  </body>
+</html>
