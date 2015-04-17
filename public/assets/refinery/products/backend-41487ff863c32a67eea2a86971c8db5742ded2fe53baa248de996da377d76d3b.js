@@ -1,0 +1,1 @@
+$(document).ready(function(){function e(e){e.is(":checked")?e.closest("li").find("textarea").prop("disabled",!1):e.closest("li").find("textarea").prop("disabled",!0)}$(".products_properties").find('input[type="checkbox"]:not(:checked)').each(function(){e($(this))}),$('.products_properties input[type="checkbox"]').click(function(){e($(this))}),page_options.init(!1,"","")});
