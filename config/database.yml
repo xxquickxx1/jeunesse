@@ -26,5 +26,5 @@ production:
   host: localhost
   database: jeunesse_production
   pool: 5
-  username: 
-  password: 
+  username: jeunesse
+  password: jeunesse
