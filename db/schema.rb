@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416160230) do
+ActiveRecord::Schema.define(version: 20150418115420) do
 
   create_table "refinery_blog_categories", force: :cascade do |t|
     t.string   "title"
@@ -124,6 +124,27 @@ ActiveRecord::Schema.define(version: 20150416160230) do
     t.datetime "updated_at"
     t.string   "image_title"
     t.string   "image_alt"
+  end
+
+  create_table "refinery_latest_news", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "photo_id"
+    t.string   "tags"
+    t.string   "slug"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "refinery_latestnews", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "photo_id"
+    t.string   "tags"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "refinery_page_part_translations", force: :cascade do |t|
