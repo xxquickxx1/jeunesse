@@ -166,6 +166,9 @@ GEM
       addressable (~> 2.3)
       multi_json (~> 1.0)
       rack
+    dragonfly-s3_data_store (1.0.4)
+      dragonfly (~> 1.0)
+      fog
     erubis (2.7.0)
     excon (0.45.2)
     execjs (2.5.2)
@@ -405,6 +408,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  dragonfly-s3_data_store
   fog
   foundation-rails
   jbuilder (~> 2.0)
