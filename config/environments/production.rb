@@ -14,6 +14,12 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+ config.s3_backend = true
+   config.s3_bucket_name = "jeunesse-uk"
+   config.s3_region = "ireland"
+    config.s3_access_key_id = "AKIAJYLNIVMZOXOM7ZAQ"
+    config.s3_secret_access_key = "mojasunia20"
+
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like
