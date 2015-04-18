@@ -9,7 +9,7 @@ Refinery::Pages.configure do |config|
   # config.default_parts = ["Body", "Side Body"]
 
   # Configure whether to allow adding new page parts
-  # config.new_page_parts = false
+  config.new_page_parts = true
 
   # Configure whether to enable marketable_urls
   # config.marketable_urls = true
@@ -41,15 +41,15 @@ Refinery::Pages.configure do |config|
   # config.scope_slug_by_parent = true
 
   # Set this to true if you want backend pages to be cached
-  # config.cache_pages_backend = false
+  config.cache_pages_backend = true
 
   # Set this to true to activate full-page-cache
-  # config.cache_pages_full = false
+  config.cache_pages_full = true
 
   # Set this to true to fully expand the page hierarchy in the admin
   # config.auto_expand_admin_tree = true
 
-  # config.layout_template_whitelist = ["application"]
+   config.layout_template_whitelist = ["application", "standard", "single"]
 
   # config.use_layout_templates = false
 
@@ -57,5 +57,5 @@ Refinery::Pages.configure do |config|
 
   # config.absolute_page_links = false
 
-  # config.show_title_in_body = true
+  config.show_title_in_body = false
 end

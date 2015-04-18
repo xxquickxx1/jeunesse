@@ -248,3 +248,35 @@ Sed condimentum ante ac quam varius pretium. Nunc ornare laoreet augue et elemen
 
 
 
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+
+$(document).scroll(function() {
+    if ($(this).scrollTop() < 100) {
+        $('nav.top-bar').attr('style', 'background-color:rgba(255,255,255,0.67)');
+        $('nav.top-bar').addClass('border-bottom-nav');
+        $('section.top-bar-section ul li a').attr('style', 'color:#7f858f');
+    } else if ($(this).scrollTop() < 115) {
+        $('nav.top-bar').attr('style', 'background-color:rgba(255,255,255,0.80)');
+    } else if ($(this).scrollTop() < 130) {
+        $('nav.top-bar').attr('style', 'background-color:rgba(255,255,255,1)');
+    } 
+});
+
+$(document).scroll(function(){
+  if($(this).scrollTop() == 0){
+    $('nav.top-bar').attr('style', 'background-color: none');
+    $('nav-top-bar').addClass('animated');
+    $('section.top-bar-section ul li a').attr('style', 'color:white');
+    $('nav.top-bar').removeClass('border-bottom-nav');
+    
+  }
+});
+
+});
+
+</script>

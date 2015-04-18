@@ -1,0 +1,85 @@
+
+<div class="row" style="margin-top:100px;">
+
+<div class="small-12 large-6 columns">
+	<%=raw @page.content_for(:body) %>
+</div>
+<div class="small-12 large-6 columns">
+		<%=raw @page.content_for(:side_body) %>
+</div>
+
+</div>
+
+
+
+<br><br><br><br>
+
+
+<div class="youtube">
+
+<div class="youtube-bg">
+    		<div class="row">
+    		<center><h2>People from all around the world joined Jeunesse</h2></center>
+
+    		<div class="small-6 large-6 columns text-left">
+    		    		<h2><small>Spread the word on social media</small></h2>
+
+    		</div>
+
+    		<div class="small-6 large-6 columns text-right">
+    		    		<h2><small>Earn money while you sleep</small></h2>
+
+    		</div>
+
+    		</div>
+</div>
+</div>
+
+
+<div class="row text-center" style="margin-top:300px;">
+
+<%=raw @page.content_for(:middle) %>
+
+<hr>
+<div class="row">
+		<div class="small6 large-6 columns"><%=raw @page.content_for(:middle_left) %></div>
+
+		<div class="small6 large-6 columns"><%=raw @page.content_for(:middle_right) %></div>
+</div>
+
+</div>
+
+
+
+<div class="world" style="margin-top:100px;">
+<div class="text-center">
+<h2>People from around the world</h2>
+<p>Joined Jeunesse Already</p>
+
+<div class="join-now"><a href="#" class="button success">Join Now</a></div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$(document).ready(function() {
+  
+                $('div.youtube-bg').tubular({videoId: 'e1v1mNyOFXU'}); // where idOfYourVideo is the YouTube ID.
+
+        });
+
+</script>
