@@ -8,6 +8,7 @@ Refinery::Core.configure do |config|
 
   # Set the S3 options using means other than securely by environment variables.
   # If you have to.
+  config.s3_backend = true
    config.s3_bucket_name = "jeunesse-uk"
    config.s3_region = "ireland"
     config.s3_access_key_id = "AKIAJYLNIVMZOXOM7ZAQ"
