@@ -9,13 +9,12 @@ Refinery::Resources.configure do |config|
   # Configure how many resources per page should be displayed in the list of resources in the admin area
   # config.pages_per_admin_index = 20
 
-  # Configure S3 (you can also use ENV for this)
-  # The s3_backend setting by default defers to the core setting for this but can be set just for resources.
-  # config.s3_backend = Refinery::Core.s3_backend
-  # config.s3_bucket_name = ENV['S3_BUCKET']
-  # config.s3_access_key_id = ENV['S3_KEY']
-  # config.s3_secret_access_key = ENV['S3_SECRET']
-  # config.s3_region = ENV['S3_REGION']
+  # Configure S3 (you can also use ""# The s3_backend setting by default defers to the core setting for this but can be set just for resources.
+  config.s3_backend = Refinery::Core.s3_backend
+  config.s3_bucket_name = "jeunesse-uk"
+  config.s3_access_key_id = "AKIAJYLNIVMZOXOM7ZAQ"
+  config.s3_secret_access_key = "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"
+  config.s3_region = "Ireland"
 
   # Configure Dragonfly
   # This is where in the middleware stack to insert the Dragonfly middleware
