@@ -1,0 +1,22 @@
+<div class="row" style="margin-top:150px;">
+
+		<div class="small-12 large-8 columns">
+			<%=raw content_for(:body) %>
+
+			<%= simple_form_for :contact, url: "/contact-jeunesse", method: :post, controller: :contacts do |t| %>
+
+					<%= t.input :full_name %>
+					<%= t.input :phone_number %>
+					<%= t.input :email %>
+					<%= t.input :company %>
+
+					<%= t.input :message %>
+					<%= t.submit 'Contact', class: 'button success' %>
+
+			<% end %>
+		</div>
+
+
+		<div class="small-12 large-4 columns"><%=raw content_for(:side_body) %></div>
+
+</div>

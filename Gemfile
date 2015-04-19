@@ -65,5 +65,5 @@ gem 'refinerycms-products', github: 'bisscomm/refinerycms-products', branch: 'ma
 gem 'refinerycms-blog', git: 'https://github.com/refinery/refinerycms-blog', branch: 'master'
 gem 'refinerycms-portfolio', github: 'refinery/refinerycms-portfolio', branch: 'master'
 gem 'foundation-rails'
-
+gem 'simple_form'
 
