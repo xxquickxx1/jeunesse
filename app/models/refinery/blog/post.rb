@@ -4,7 +4,7 @@ require 'seo_meta'
 module Refinery
   module Blog
     class Post < ActiveRecord::Base
-     
+     attr_accessor :images_attributes
       extend FriendlyId
 
       translates :title, :body, :custom_url, :custom_teaser, :slug, :include => :seo_meta

@@ -1,0 +1,15 @@
+   <ul class="breadcrumbs"> 
+                <li><%= link_to "Home", "/" %> </li> 
+                <% [@page.ancestors, @page].flatten.collect do |p| %> 
+                        <li><%= link_to p.title, p.url %> </li> 
+                <% end %> 
+        </ul> 
+
+
+<% content_for :body do %>
+  <%= raw @page.content_for(:body) %>
+  <%= render 'refinery/portfolio/items/items', :items => @items %>
+  <%= render 'galleries', :galleries => @galleries %>
+<% end %>
+
+<%= render '/refinery/content_page' %>

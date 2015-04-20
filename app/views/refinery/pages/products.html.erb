@@ -1,8 +1,8 @@
 <% unless @page.root? %> 
         <ul class="breadcrumbs"> 
-                <li><%= link_to "Home", root_url(:only_path => true) %> &gt; </li> 
+                <li><%= link_to "Home", root_url(:only_path => true) %> </li> 
                 <% [@page.ancestors, @page].flatten.collect do |p| %> 
-                        <li><%= link_to p.title, p.url %> <%= "&gt;".html_safe unless p.id == @page.id  %></li> 
+                        <li><%= link_to p.title, p.url %> </li> 
                 <% end %> 
         </ul> 
 <% end %> 
@@ -16,7 +16,7 @@
     </section>
 
     <section class="small-12 large-8 columns ">
-    <h1><%= @page.title %>
+    <h1><%= @page.title %></h1>
      <%=raw @page.content_for(:body) %>
 
      <hr>
@@ -29,6 +29,29 @@
 
 
 </div>
+
+
+
+
+<section class="row tabs1">
+		<ul class="tabs" data-tab>
+  <li class="tab-title active"><a href="#panel1">Description</a></li>
+  <li class="tab-title"><a href="#panel2">Ingredients</a></li>
+  <li class="tab-title"><a href="#panel3">Usage</a></li>
+</ul>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    	<%=raw @page.content_for(:description) %>
+  </div>
+  <div class="content" id="panel2">
+  		<%=raw @page.content_for(:ingredients) %>
+  </div>
+  <div class="content" id="panel3">
+  		<%=raw @page.content_for(:usage) %>
+  </div>
+</div>
+</section>
+
 
 
 

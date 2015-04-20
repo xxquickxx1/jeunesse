@@ -1,0 +1,23 @@
+
+
+
+<div class="row">
+			<div class="small-12 large-4 columns">
+<div class="whatever">
+    <div class="item">
+          <%= image_tag(item.image.url, {:id => dom_id(item), :title => item.title}) %>
+ 
+   
+
+    </div>                 
+</div>
+
+</div>
+
+<div class="small-12 large-8 columns">
+<% if ::Refinery::Portfolio.display_item_text %>
+              <h2><%= item.title %></h2>
+      <p><%= raw item.caption %></p>
+ <% end %>
+</div>
+</div>

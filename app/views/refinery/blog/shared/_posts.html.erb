@@ -1,8 +1,8 @@
 <% if @posts.many? %>
   <h2><%= t('.other') %></h2>
-  <ul id="blog_posts">
+  <ul id="">
     <% @posts.each do |blog_post| %>
-      <li class='clearfix'>
+      <li class=''>
         <%= link_to blog_post.title, refinery.blog_post_path(blog_post) %>
       </li>
     <% end %>
