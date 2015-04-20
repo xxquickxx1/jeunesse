@@ -1,4 +1,5 @@
-<div class="row" style="margin-top:200px;">
+
+<div class="row-flex">
 
 </div>
 
@@ -7,7 +8,7 @@
 <% content_for :body do %>
 
   <% if @products.any? %>
-  
+
     <ul id="products">
       <%= render :partial => '/refinery/products/shared/product', :collection => @products %>
     </ul>
@@ -21,3 +22,6 @@
 <% end %>
 
 <%= render '/refinery/content_page', :hide_sections => [:side_body, :body_content_title] %>
+
+
+</div>
