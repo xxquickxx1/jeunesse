@@ -12,7 +12,7 @@ Refinery::Resources.configure do |config|
   # Configure S3 (you can also use ""# The s3_backend setting by default defers to the core setting for this but can be set just for resources.
   config.s3_backend = Refinery::Core.s3_backend
   config.s3_bucket_name = "jeunesse-uk"
-  config.s3_access_key_id = "AKIAJYLNIVMZOXOM7ZAQ"
+  config.s3_access_key_id = "AKIAIHRTGIKJLE6XJB2Q"
   config.s3_secret_access_key = "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"
   config.s3_region = "eu-west-1"
 
