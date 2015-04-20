@@ -7,8 +7,10 @@
                 <div class="small-12 large-6 text-center columns">
                       
                              <div class="image">
+                          <% @image_name = Refinery::Resource.where(id: "#{product.file_id}").first %>
+                          <%= @image_name.inspect %>
                             <%= link_to refinery.products_product_path(product, referer: refinery.products_category_path(root_category)) do %>
-                              <%= image_fu product.images.first, '242x200#c' %>
+                              <%= image_tag("#{@image_name.file_uid}") %>
                             <% end %>
 
                             <h3><%= link_to product.title, refinery.products_product_path(product, referer: refinery.products_category_path(root_category)) %></h3>
@@ -20,3 +22,4 @@
                   
                   
                 </div>
+
