@@ -1,11 +1,13 @@
-<div class="row" style="margin-top:100px;">
+<div class="row" style="margin-top:200px;">
 
 </div>
 
 <% content_for :title, @page.title %>
 
 <% content_for :body do %>
+
   <% if @products.any? %>
+  
     <ul id="products">
       <%= render :partial => '/refinery/products/shared/product', :collection => @products %>
     </ul>
