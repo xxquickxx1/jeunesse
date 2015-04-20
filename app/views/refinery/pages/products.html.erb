@@ -1,22 +1,34 @@
+<% unless @page.root? %> 
+        <ul class="breadcrumbs"> 
+                <li><%= link_to "Home", root_url(:only_path => true) %> &gt; </li> 
+                <% [@page.ancestors, @page].flatten.collect do |p| %> 
+                        <li><%= link_to p.title, p.url %> <%= "&gt;".html_safe unless p.id == @page.id  %></li> 
+                <% end %> 
+        </ul> 
+<% end %> 
 <div class="row" style="margin-top:100px;">
 
-<% content_for :title, @page.title %>
 
-<% content_for :body do %>
-  <% if @products.any? %>
-    <ul id="products">
-      <%= render :partial => '/refinery/products/shared/product', :collection => @products %>
-    </ul>
-  <% else %>
-    <p>
-      <strong>
-        <%= t('.no_items_yet') %>
-      </strong>
-    </p>
-  <% end %>
-<% end %>
 
-<%= render '/refinery/content_page', :hide_sections => [:side_body, :body_content_title] %>
+
+    <section class="small-12 large-4 columns text-center">
+        <%=raw @page.content_for(:side_body) %>
+    </section>
+
+    <section class="small-12 large-8 columns ">
+    <h1><%= @page.title %>
+     <%=raw @page.content_for(:body) %>
+
+     <hr>
+     <div class="row">
+     		<a href="#" class="button success right">Get One</a>
+     		<a href="#" class="button primary right">Become Distributor</a>
+     </div>
+    </section>
+
+
 
 </div>
+
+
 

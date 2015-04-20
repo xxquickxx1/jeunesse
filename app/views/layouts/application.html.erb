@@ -25,7 +25,7 @@
   <nav class="top-bar " data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#"><%= image_tag('logo.png') %></a></h1>
+      <h1><a href="#"><%= image_tag('logo.png', class: 'z-indexed') %></a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -34,6 +34,12 @@
 
   <body>
 <% if params[:controller] == "home" %>
+
+
+
+
+
+
 
   <section class="top-bar-section">
 
@@ -56,6 +62,14 @@
 </nav>
 </div>
 
+
+<script>
+
+$('section.top-bar-section nav ul li').has("ul").addClass("has-dropdown");
+$('section.top-bar-section nav ul li.has-dropdown ul').addClass('dropdown');
+
+
+</script>
     <%= yield %>
 
 

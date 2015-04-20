@@ -14,6 +14,12 @@ Refinery::Core.configure do |config|
    # config.s3_access_key_id = "AKIAJYLNIVMZOXOM7ZAQ"
    # config.s3_secret_access_key = "mojasunia20"
 
+     config.s3_backend = Refinery::Core.s3_backend
+  config.s3_bucket_name = "jeunesse-uk"
+  config.s3_access_key_id = "AKIAIHRTGIKJLE6XJB2Q"
+  config.s3_secret_access_key = "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"
+  config.s3_region = "eu-west-1"
+
   # When true will use Amazon's Simple Storage Service instead of
   # the default file system for storing resources and images
   config.s3_backend = config.s3_access_key_id.present? || config.s3_secret_access_key.present?

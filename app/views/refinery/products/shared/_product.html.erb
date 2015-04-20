@@ -1,25 +1,28 @@
-
-
-
-
 <% root_category = product.categories.select{ |c| c.root? } %>
 
-                <div class="small-12 large-6 text-center columns">
-                      
-                             <div class="image">
-                          <% @image_name = Refinery::Resource.where(id: "#{product.file_id}").first %>
-                          <%= @image_name.inspect %>
-                            <%= link_to refinery.products_product_path(product, referer: refinery.products_category_path(root_category)) do %>
-                              <%= image_tag("#{@image_name.file_uid}") %>
-                            <% end %>
+<li id=<%= "product_#{product.id}" %> class="product">
+  <div class="title">
+    <h2><%= link_to product.title, refinery.products_product_path(product, referer: refinery.products_category_path(root_category)) %></h2>
+  </div>
 
-                            <h3><%= link_to product.title, refinery.products_product_path(product, referer: refinery.products_category_path(root_category)) %></h3>
-                            </div>
+  <div class="image">
+    <%= link_to refinery.products_product_path(product, referer: refinery.products_category_path(root_category)) do %>
+      <%= image_fu product.images.first, '242x200#c' %>
+    <% end %>
+  </div>
 
+  <div class="sub-category">
+    <%= product.categories.select{ |c| c.leaf? }.first.title %>
+  </div>
 
-                            
-                        
-                  
-                  
-                </div>
+  <ul class="properties">
+    <% product.propertizations.each do |property| %>
+      <li>
+        <span class="title"><%= Refinery::Products::Property.find_by(id: property.products_property_id).title %></span>
+        <span class="value"><%= property.value  %></span>
+      </li>
+    <% end %>
+  </ul>
 
+  <%= link_to t('.read_more', product: product.title).html_safe, refinery.products_product_path(product, referer: refinery.products_category_path(root_category)), class: 'read-more' %>
+</li>
