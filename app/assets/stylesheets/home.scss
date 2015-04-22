@@ -3,3 +3,129 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+nav#slide-menu {
+  position: fixed;
+  top: 0;
+  left: -283px;
+  bottom: 0;
+  display: block;
+  float: left;
+  width: 100%;
+  max-width: 284px;
+  height: 100%;
+  background-color:#556270;
+  z-index:999;
+
+  -moz-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+
+div.close-nav{
+	margin-top:10px;
+	margin-right:30px;
+}
+
+  > ul {
+    display: block;
+    margin: 40px;
+    padding: 0;
+    list-style: none;
+    opacity: 0.5;
+
+    -moz-transition: all 300ms;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+
+    li {
+      color: #dfe5eb;
+      padding: 6px 0;
+      cursor: pointer;
+
+      &:hover { color: #59e9df; }
+    }
+
+    li:before {
+      font-family: "ico";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      color: #59e9df;
+      margin-right: 12px;
+      text-align: center;
+      font-variant: normal;
+      font-size: 0.75em;
+      text-transform: none;
+      line-height: 1em;
+    }
+
+    li.sep { 
+      margin-top: 7px; 
+      padding-top: 14px; 
+      border-top: 1px solid lighten(#556270, 10%); 
+    }
+
+    li.timeline:before { content: '\e805'; }
+    li.events:before { content: '\e802'; }
+    li.calendar:before { content: '\e800'; }
+    li.settings:before { content: '\e803'; }
+    li.logout:before { content: '\e804'; }
+  }
+}
+
+body.menu-active nav#slide-menu { left: 0px; }
+body.menu-active nav#slide-menu ul { left: 0px; opacity: 1; }
+
+/*
+  Content
+*/
+
+div#content {
+  position: fixed;
+  top: 330;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  overflow: hidden;
+  background: #fcfeff;
+  border-radius: 0;
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -moz-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+
+  div.menu-trigger {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    color:#5fcf80;
+    cursor: pointer;
+    border-radius: 5px;
+
+    -moz-transition: all 300ms;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+
+    
+
+    &:hover { color:#32B358; }
+  }
+}
+
+body.menu-active div#content { left: 284px; border-radius: 7px 0 0 7px; }
+body.menu-active div#content .menu-trigger { left: 294px; }
+
+
+
+
+
+
