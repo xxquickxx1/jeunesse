@@ -80,6 +80,9 @@ $('section.top-bar-section nav ul li.has-dropdown ul').addClass('dropdown');
 
 
 </script>
+<% if params[:controller] != "home" %>
+<%= render 'refinery/side_nav' %>
+<% end %>
     <%= yield %>
 
 

@@ -94,6 +94,7 @@ module Refinery
 
       def page_params
         params.require(:page).permit(
+          :show_in_footer,
          :browser_title, :image, :draft, :link_url, :menu_title, :meta_description,
           :parent_id, :skip_to_first_child, :show_in_menu, :title, :view_template,
           :layout_template, :custom_slug, parts_attributes: [:id, :title, :body, :position]
