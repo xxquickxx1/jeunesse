@@ -16,7 +16,7 @@
 
 				<div style="background-color:#1a1a1a; padding:10px 25px 50px 25px">
 				<h4 style="margin-bottom:25px; color:rgb(80,80,80); font-weight:700;">Popular Posts</h4>
-			<% Refinery::Blog::Post.all.each do |t| %>
+			<% Refinery::Blog::Post.all.limit(10).each do |t| %>
 				<div class="blog-title-single">
 				<%= link_to t.title, blog_post_path(t) %>
 				</div>
