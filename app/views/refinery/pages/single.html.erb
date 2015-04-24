@@ -1,27 +1,41 @@
 
 
 
-<div class="row" style="margin-top:50px; margin-bottom:100px;">
+<div class="row-flex" style="margin-top:-4px; margin-bottom:100px; min-height:1000px;">
 <!-- Navigation -->
 
+		<div class="small-3 large-3 columns" style="">
+			<div class="row-flex single-follow">Follow Us
+					<section class="single-icons right">
+						<i class="fa fa-facebook "></i>
+						<i class="fa fa-twitter "></i>
+						<i class="fa fa-google-plus "></i>
+						<i class="fa fa-instagram "></i>
+					</section>
+			</div>
+
+				<div style="background-color:#1a1a1a; padding:10px 25px 50px 25px">
+				<h4 style="margin-bottom:25px; color:rgb(80,80,80); font-weight:700;">Popular Posts</h4>
+			<% Refinery::Blog::Post.all.each do |t| %>
+				<div class="blog-title-single">
+				<%= link_to t.title, blog_post_path(t) %>
+				</div>
+			<% end %>
+			</div>
+		</div>
 
 
-
-		<div class="small-8 large-8 columns" style="border-right:solid 1px rgb(230,230,230);">
+		<div class="small-6 large-8 columns" style="border-right:solid 1px rgb(230,230,230);">
 			<%=raw @page.content_for(:body) %>
 
 		</div>
 
-		<div class="small-4 large-4 columns">
+		<div class="small-3 large-4 columns">
 			<!-- Implement categories etc -->
 	
 
-				<div class="row" style="border-bottom:solid 1px rgb(230,230,230);">
-						<%=raw @page.content_for(:side_body) %>
-						
-								
-						
-				</div>
+				<%=raw @page.content_for(:side_body) %>
+			
 
 		</div>
 

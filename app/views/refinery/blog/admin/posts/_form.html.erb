@@ -41,6 +41,16 @@
   </div>
 
   <%= render '/refinery/admin/form_advanced_options_menu', :f => f %>
+<div class="field">
+  <%= f.label :image_id %>
+  <%= render :partial => "/refinery/admin/image_picker", :locals => {
+    :f => f,
+    :field => :image_id,
+    :image => f.object.image,
+    :toggle_image_display => true
+  }
+  %>
+</div>
 
   <div class='field'>
     <%= f.label :tag_list, t('refinery.blog.shared.tags.title') -%>
