@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
 
   def instantiate_mail
   	@contact = Contact.new
+  	 expires_in 60.minutes, :public => true
   end
 end
