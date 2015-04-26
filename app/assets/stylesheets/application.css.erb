@@ -57,6 +57,10 @@ ul.dropdown{
 	border-top:solid 2px #0E51A7;
 }
 
+.top-bar-section .dropdown li:not(.has-form):not(.active)>a:not(.button){
+	line-height: 4em;
+}
+
 div.initial-bg{
 	background: url("<%= asset_path('graph-home.svg') %>"), url("<%= asset_path('1.jpg') %>") no-repeat center center fixed; 
 	  -webkit-background-size: cover;
@@ -538,5 +542,5 @@ div.blog-title-single a:hover{
 	color:#38ba5e;
 }
 .diamonds-image img{
-	max-width: 50%;
+	
 }

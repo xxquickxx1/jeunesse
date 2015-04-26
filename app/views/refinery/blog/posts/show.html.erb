@@ -1,4 +1,44 @@
-<% content_for :body do %>
+
+
+
+
+
+<section style=" background-color:#f8f8f8;">
+<% unless @page.root? %> 
+        <ul class="breadcrumbs"> 
+                <li><%= link_to "Home", root_url(:only_path => true) %> </li> 
+                <% [@page.ancestors, @page].flatten.collect do |p| %> 
+                        <li><%= link_to p.title, p.url %> </li> 
+                <% end %> 
+        </ul> 
+<% end %> 
+<div class="row" style="margin-top:-4px; margin-bottom:100px; padding-top:50px; ">
+<!-- Navigation -->
+
+		<!-- <div class="small-3 large-3 columns" style="">
+			<div class="row-flex single-follow">Follow
+					<section class="single-icons right">
+						<i class="fa fa-facebook "></i>
+						<i class="fa fa-twitter "></i>
+						<i class="fa fa-google-plus "></i>
+						<i class="fa fa-instagram "></i>
+					</section>
+			</div>
+
+				<div style="background-color:#1a1a1a; padding:10px 25px 50px 25px">
+				<h4 style="margin-bottom:25px; color:rgb(80,80,80); font-weight:700;">Popular Posts</h4>
+			<% #Refinery::Blog::Post.all.limit(10).each do |t| %>
+				<div class="blog-title-single">
+				
+				</div>
+			<% #end %>
+			</div>
+		</div>
+-->
+
+		<div class="small-12 large-12 columns" style="border-right:solid 1px rgb(230,230,230); background-color:white; padding:30px;">
+		
+			<% content_for :body do %>
   <div id="show_blog_post">
     <%= render 'post' %>
   </div>
@@ -17,3 +57,14 @@
   <script src="http://w.sharethis.com/button/buttons.js"></script>
   <script>stLight.options({publisher:'<%= Refinery::Blog.share_this_key %>'});</script>
 <% end if Refinery::Blog::Post::ShareThis.enabled? %>
+
+
+		</div>
+
+	
+
+
+</div>
+
+
+</section>
