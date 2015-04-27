@@ -10,6 +10,8 @@
     <%= @page.title if params[:controller] != "home" %>
     </title>
 
+    <meta name="description" content="<%= strip_tags(@page.content_for(:meta)) if @page %>">
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application" %>

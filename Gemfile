@@ -34,7 +34,7 @@ gem "dragonfly-s3_data_store", group: :production
 gem 'fog', group: :production
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'meta-tags'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
