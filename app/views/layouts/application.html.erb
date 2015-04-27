@@ -6,7 +6,9 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:500,700,300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
-    <title><%= content_for?(:title) ? yield(:title) : "Join Jeunesse With Diamonds | World-Wide campaign" %></title>
+    <title><%= "Join Jeunesse With Diamonds | World-Wide campaign" if params[:controller] == "home" %>
+    <%= @page.title if params[:controller] != "home" %>
+    </title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
