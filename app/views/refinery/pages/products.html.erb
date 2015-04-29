@@ -1,3 +1,13 @@
+
+<div class="standard-bg">
+
+<div class="row text-center">
+<h1>
+<%= @page.title if @page.title%>
+</h1>
+<a href="http://tomaszgrabarczyk.jeunesseglobal.com" class="button success">Join Jeunesse</a>
+</div>
+</div>
 <% unless @page.root? %> 
         <ul class="breadcrumbs"> 
                 <li><%= link_to "Home", root_url(:only_path => true) %> </li> 
@@ -6,52 +16,113 @@
                 <% end %> 
         </ul> 
 <% end %> 
+
 <div class="row" style="margin-top:100px;">
+<div class="small-12 large-12 columns">
 
+<% @pages = refinery_menu_pages.select{|p| p.parent_id == @page.root.id} %>
 
+<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3">
 
+<% @pages.each do |p| %>
 
-    <section class="small-12 large-4 columns text-center">
-        <%=raw @page.content_for(:side_body) %>
-    </section>
+<li>
+    <div class="row-flex product-tab">
+        <div class="product-title"><h4><%= link_to p.title, p.url %></h4></div>
+        <div class="product-subtitle"></div>
 
-    <section class="small-12 large-8 columns ">
-    <h1><%= @page.title %></h1>
-     <%=raw @page.content_for(:body) %>
+        <div class="product-body">
+            <div class="holder-<%= p.original_id %>">
+              
+            </div>
+        </div>
+    </div>
 
-     <hr>
-     <div class="row">
-     		<a href="/contact" class="button success right">Get One</a>
-     		<a href="http://tomaszgrabarczyk.jeunesseglobal.com" class="button primary right">Become Distributor</a>
-     </div>
-    </section>
+</li>
 
+<script>
+$(".holder-<%= p.original_id %>").load("<%= p.url[:path][0] %>/<%= p.url[:path][1] %> div.product p");
 
+</script>
 
-</div>
-
-
-
-
-<section class="row tabs1">
-		<ul class="tabs" data-tab>
-  <li class="tab-title active"><a href="#panel1">Description</a></li>
-  <li class="tab-title"><a href="#panel2">Ingredients</a></li>
-  <li class="tab-title"><a href="#panel3">Usage</a></li>
+<% end %>
 </ul>
-<div class="tabs-content">
-  <div class="content active" id="panel1">
-    	<%=raw @page.content_for(:description) %>
-  </div>
-  <div class="content" id="panel2">
-  		<%=raw @page.content_for(:ingredients) %>
-  </div>
-  <div class="content" id="panel3">
-  		<%=raw @page.content_for(:usage) %>
-  </div>
-</div>
-</section>
 
+  <%=raw @page.content_for(:body) %>
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="grey-bg" style="margin-top:100px;">
+<div class="row text-center">
+<%=raw @page.content_for(:middle) %>
+</div>
+<hr>
+<div class="row">
+    <div class="small6 large-6 columns"><%=raw @page.content_for(:middle_left) %></div>
+
+    <div class="small6 large-6 columns"><%=raw @page.content_for(:middle_right) %></div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="world" style="margin-top:100px;">
+<div class="text-center">
+<h2>People from around the world</h2>
+<p>Joined Jeunesse Already</p>
+<p>Have you?</p>
+
+<div class="join-now"><a href="#" class="button success">Join Now</a></div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+$(document).scroll(function(){
+  if($(this).scrollTop() > 50){
+    $('.standard-bg h1').addClass('animated fadeOutLeft');
+    $('.standard-bg a').addClass('animated fadeOutRight');
+  }
+});
+
+
+$(document).scroll(function(){
+  if($(this).scrollTop() < 50){
+  $('.standard-bg h1').removeClass(' fadeOutLeft').addClass('fadeInLeft');
+    $('.standard-bg a').removeClass(' fadeOutRight').addClass('fadeInRight');
+    
+  }
+});
+
+});
+
+</script>
 
 
 

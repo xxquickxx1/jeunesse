@@ -42,13 +42,17 @@
 
 
 <div class="user-stories text-center" style="margin-top:100px;">
-<h1>Customer Stories<br>
-<small>Our people who won &dollar;9000 with Jeunesse event.</small>
+<h1>Jeunesse Diamond Team Members<br>
+<small>They love our team, we've helped them to achieve their goals and succeed in Jeunesse career.<br>
+<span class="green"> Time for you!</span></small>
 </h1>
 <hr>
 <br><br>
-        <div class="row">
-                <div class="person">
+        <div class="row-flex" style="padding:30px 40px;">
+                <div class="person row-flex">
+                <ul class='small-block-grid-2 medium-block-grid-3 large-block-grid-3 person-grid'>
+
+                </ul>
 
                 </div>
         </div>
@@ -72,7 +76,7 @@
 
 <script>
 $.ajax({
-  url: 'http://api.randomuser.me/?results=6&key=abcd',
+  url: 'http://api.randomuser.me/?results=15&key=abcd',
   dataType: 'json',
   success: function(data){
     console.log(data);
@@ -80,7 +84,9 @@ $.ajax({
         $.each(data.results, function(key, val){
             console.log(val.user.name.first);
             
-            $('div.person').append(
+            $('ul.person-grid').append(
+              
+              "<li>" +
 
                 "<div class='row'>" + 
                     "<div class='large-8 columns'>" +
@@ -90,7 +96,8 @@ $.ajax({
                     "<div class='large-4 columns'>" + 
                         "<img src='" + val.user.picture.medium + "'>" +
                     "</div>" +
-                "</div>" + "<hr>"
+                "</div>" + 
+                  "</li>"
 
 
                 

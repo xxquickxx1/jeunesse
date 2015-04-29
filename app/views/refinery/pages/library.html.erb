@@ -1,0 +1,63 @@
+<div class="library-wrapper">
+
+
+<div class="row library-hero">
+<h1>Leaders Library - Diamonds Team</h1>
+<hr>
+<div class="small-6 large-6 columns">
+<%=raw @page.content_for(:hero_left) %>
+</div>
+
+<div class="small-6 large-6 columns">
+<%=raw @page.content_for(:hero_right) %>
+</div>
+</div>
+
+<br>
+<div class="row">
+<h5>Courses</h5>
+<p>Browse courses across an array of topics and disciplines</p>
+</div>
+
+<% @pages = refinery_menu_pages.select{|p| p.parent_id == @page.root.id} %>
+
+<div class="row">
+<ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-2">
+
+<% @pages.each do |p| %>
+
+<li><%= link_to p.url do %>
+  	<div class="course">
+  		<div class="course-title"><p class="left"><small>Advanced</small></p><p class="right"><small>15min</small></p></div>
+  	
+
+  	<div class="course-body">
+  		<h5><%= p.title.titleize %></h5>
+  		
+  		<p class="holder-<%= p.original_id %>">
+  		
+  		</p>
+
+  		<script>
+$(".holder-<%= p.original_id %>").load("<%= p.url[:path][0] %>/<%= p.url[:path][1] %> div.course-item-body>p");
+
+</script>
+<hr>
+<p style="margin:0;
+padding:0; font-size:0.7em;" class="right">Category: Business</p>
+  	</div>
+  	</div>
+ <% end %></li>
+<% end %>
+
+
+
+  
+</ul>
+</div>
+
+
+
+
+</div>
+
