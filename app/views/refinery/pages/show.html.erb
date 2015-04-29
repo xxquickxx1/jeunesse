@@ -1,7 +1,61 @@
-<div class="product row" style="margin-top:200px; padding:200px;">
-	
-		<%=raw @page.content_for(:body) %>
 
-		
+<div class="standard-bg" style="max-height:auto;">
+
+<div class="row text-center">
+
+<div class="row-flex">
+
+<div class="small-12 large-5 columns text-center product-image">
+<%=raw @page.content_for(:side_body) %>
+</div>
+
+<div class="small-12 large-7 columns product-description">
+<%=raw @page.content_for(:featured) %>
+<br>
+<a href="http://tomaszgrabarczyk.jeunesseglobal.com" class="button success">Get One</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div class="product row" style="margin-top:50px;">
+	<center><h1><%= @page.title %></h1></center>
+		<div class="row-flex">
+
+		<div class="small-12 large-4 columns text-center">
+		<%=raw @page.content_for(:side_body) %>
+
+		</div>
+
+		<div class="small-12 large-8 columns" style="padding-left:130px;">
+		<%=raw @page.content_for(:body) %>
+		</div>
+
+		</div>
+
+	
+
+
+
+</div>
+
+<hr>
+
+
+<div class="row">
+
+		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 product-details">
+  <li>
+  <h3>Description</h3>
+  <%=raw @page.content_for(:description) %></li>
+  <li>
+  <h3>Usage</h3>
+  <%=raw @page.content_for(:usage) %></li>
+  <li>
+  <h3>Ingredients</h3>
+  <%=raw @page.content_for(:ingredients) %></li>
+		</ul>
 
 </div>
