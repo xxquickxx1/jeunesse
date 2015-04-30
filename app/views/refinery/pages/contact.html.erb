@@ -2,9 +2,9 @@
 
 
 
-		<div class="small-12 large-8 columns">
+		<div class="small-12 large-8 columns readers-place">
 			<%=raw @page.content_for(:body) %>
-
+<hr>
 			<%= simple_form_for :contact, url: "/contact-jeunesse", method: :post, controller: :contacts do |t| %>
 
 					<%= t.input :full_name %>
@@ -19,7 +19,7 @@
 		</div>
 
 
-		<div class="small-12 large-4 columns">
+		<div class="small-12 large-4 columns readers-place">
 		<%=raw @page.content_for(:side_body) %>
 		</div>
 
