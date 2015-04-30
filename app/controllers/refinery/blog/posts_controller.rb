@@ -9,6 +9,7 @@ module Refinery
       respond_to :html, :js, :rss
 
       def index
+
         if request.format.rss?
           @posts = if params["max_results"].present?
             # limit rss feed for services (like feedburner) who have max size
@@ -24,6 +25,7 @@ module Refinery
       end
 
       def show
+        
         @comment = Comment.new
 
         @canonical = refinery.url_for(:locale => Refinery::I18n.current_frontend_locale) if canonical?
