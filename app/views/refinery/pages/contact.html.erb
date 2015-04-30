@@ -3,7 +3,7 @@
 
 
 		<div class="small-12 large-8 columns">
-			<%=raw content_for(:body) %>
+			<%=raw @page.content_for(:body) %>
 
 			<%= simple_form_for :contact, url: "/contact-jeunesse", method: :post, controller: :contacts do |t| %>
 
@@ -19,6 +19,8 @@
 		</div>
 
 
-		<div class="small-12 large-4 columns"><%=raw content_for(:side_body) %></div>
+		<div class="small-12 large-4 columns">
+		<%=raw @page.content_for(:side_body) %>
+		</div>
 
 </div>
