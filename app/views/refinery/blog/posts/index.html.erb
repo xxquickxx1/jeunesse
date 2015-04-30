@@ -1,4 +1,4 @@
-
+<div class="row" style="margin-top:150px;">
             <% content_for :body do %>
               <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
 
@@ -22,4 +22,4 @@
 
 
 
-<% end %>
+</div>

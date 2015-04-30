@@ -1,10 +1,9 @@
 
-
-<div class="standard-bg">
+<div class="standard-bg-blog">
 
 <div class="row text-center">
 <h1>
-<%= @page.title if @page.title%>
+<%= @post.title %>
 </h1>
 <a href="http://tomaszgrabarczyk.jeunesseglobal.com" class="button success">Join Jeunesse</a>
 </div>
@@ -18,20 +17,14 @@
 <% end %>
 <article id="blog_post">
   <header>
-    <h1><%= @post.title %></h1>
+  
     <section class='details'>
-      <time datetime="<%=l @post.published_at.to_date, :format => :default %>" class='posted_at'>
-        <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date, :format => :short)) %>
-      </time>
-      <%= content_tag(:div, "#{t('by', :scope => 'refinery.blog.posts.show')} #{@post.author.username}", :class => "blog_author") if @post.author.present? %>
-      <% if @post.source_url.present? %>
-        <div class='blog_source'>
-          <%= "#{t('source', :scope => 'refinery.blog.posts.show')}: " %>
-          <%= link_to (@post.source_url_title.blank? ? @post.source_url : @post.source_url_title), @post.source_url %>
-        </div>
-      <% end %>
+      <span class="post">Posted <%= time_ago_in_words(@post.created_at) %> ago</span>
+       
+     
+ 
       <% if (categories = @post.categories).any? %>
-        <aside class='filled_in'>
+        <aside class='filled_in right'>
           <%= t('filled_in', :scope => 'refinery.blog.posts.show') %>
           <% categories.each_with_index do |category, index| %>
             <%= link_to category.title, refinery.blog_category_path(category) -%><%= ',' if index < ((categories.length) - 1) %>
@@ -40,8 +33,10 @@
       <% end %>
     </section>
   </header>
-  <%= @post.body.html_safe %>
 
+<hr>
+  <%= @post.body.html_safe %>
+<hr>
   <% if Refinery::Blog::Post::ShareThis.enabled? %>
     <span class="st_sharethis" displayText="ShareThis"></span>
   <% end %>

@@ -1,9 +1,11 @@
 <aside id="comments">
   <% if (comments = @post.comments.approved).any? %>
-    <h2><%= t('title', :scope => 'refinery.blog.posts.show.comments') %></h2>  
+  <hr>
+   
     <%= render :partial => "comment", :collection => comments %>
   <% end %>
-
+  <hr>
+</aside>
   <% if Refinery::Blog::Post.comments_allowed? %>
 
     <% flash.each do |key, value| %>
@@ -30,7 +32,7 @@
         <%= f.text_area :message, :rows => 6 %>
       </div>
       <div class='field form-actions'>
-        <%= f.submit t('submit', :scope => 'refinery.blog.posts.show') %>
+        <%= f.submit 'Comment', :scope => 'refinery.blog.posts.show', class: "button success" %>
       </div>
     <% end %>
   <% end %>
