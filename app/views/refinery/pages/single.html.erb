@@ -1,5 +1,15 @@
 
-<section style=" background-color:#f8f8f8;">
+<div class="standard-bg">
+
+<div class="row text-center">
+<h1>
+<%= @page.title if @page.title%>
+</h1>
+</div>
+</div>
+
+
+
 <% unless @page.root? %> 
         <ul class="breadcrumbs"> 
                 <li><%= link_to "Home", root_url(:only_path => true) %> </li> 
@@ -8,41 +18,27 @@
                 <% end %> 
         </ul> 
 <% end %> 
-<div class="row" style="margin-top:-4px; margin-bottom:100px; padding-top:50px; ">
+
+<div class="row-flex" style="background-color:#f8f8f8;">
+
+<div class="row" style="min-height:800px;">
 <!-- Navigation -->
 
-		<div class="small-3 large-3 columns" style="">
-			<div class="row-flex single-follow">Follow
-					<section class="single-icons right">
-						<a href="https://www.facebook.com/jeunesseineu?ref=ts&fref=ts" target="_blank" style="color:white;"><i class="fa fa-facebook "></i></a>
-					
-						<a href="https://plus.google.com/112322833108145977357/posts" target="_blank" style="color:white;"><i class="fa fa-google-plus"></i></a>
-				
-					</section>
-			</div>
-
-				<div style="background-color:#1a1a1a; padding:10px 25px 50px 25px">
-				<h4 style="margin-bottom:25px; color:rgb(80,80,80); font-weight:700;">Popular Posts</h4>
+		<div class="small-3 large-3 columns white-col">
 			<% Refinery::Blog::Post.all.limit(10).each do |t| %>
 				<div class="blog-title-single">
 				<%= link_to t.title, blog_post_path(t) %>
 				</div>
 			<% end %>
-			</div>
 		</div>
 
 
-		<div class="small-9 large-9 columns" style="border-right:solid 1px rgb(230,230,230); background-color:white; padding:30px;">
-		
-			<%=raw @page.content_for(:body) %>
-
-
+		<div class="small-8 large-8 columns white-col">
+				<%=raw @page.content_for(:body) %>
 		</div>
-
-	
 
 
 </div>
 
+</div>
 
-</section>

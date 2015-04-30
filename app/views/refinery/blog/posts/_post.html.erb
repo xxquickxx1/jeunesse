@@ -1,4 +1,16 @@
 
+
+<div class="standard-bg">
+
+<div class="row text-center">
+<h1>
+<%= @page.title if @page.title%>
+</h1>
+<a href="http://tomaszgrabarczyk.jeunesseglobal.com" class="button success">Join Jeunesse</a>
+</div>
+</div>
+
+
 <% flash.each do |key, value| %>
  <div id='flash' class="flash flash_<%= key %>">
    <%= value %>
