@@ -7,10 +7,19 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
     <title><%= "Join Jeunesse With Diamonds | World-Wide campaign" if params[:controller] == "home" %>
-    <%= @page.title if params[:controller] != "home" %>
+    <%= @page.browser_title if params[:controller] != "home" && params[:controller] != "refinery/blog/posts" %>
+    <%= @post.title if params[:controller] == "refinery/blog/posts" %>
     </title>
 
-    <meta name="description" content="<%= strip_tags(@page.content_for(:meta)) if @page %>">
+    <% if params[:controller] == "refinery/blog/posts" %>
+    <meta name="description" content="<%= @post.meta_description if params[:controller] == "refinery/blog" || "refinery/blog/posts" %>">
+    <% end %>
+
+    <% if @page && params[:controller] != "home" && params[:controller] != "refinery/blog/posts" %>
+    <meta name="description" content="<%= @page.meta_description if @page %>">
+
+    <% end %>
+ 
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
