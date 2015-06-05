@@ -1,0 +1,60 @@
+
+<div class="row course">
+<div class="right" style="margin-top:10px; margin-right:10px;">
+      <button href="#" data-dropdown="drop3" aria-controls="drop3" aria-expanded="false" class="dropdown button primary right">
+        Actions
+        </button><br>
+        <ul id="drop3" data-dropdown-content class="f-dropdown" aria-hidden="true">
+          <li> <%= link_to 'Write story', new_story_path(current_user) %></li>
+
+          <li><%= link_to 'Stories', stories_path(current_user) %></li>
+          <li><%= link_to 'Manage stories', manage_stories_path(current_user) %></li>
+
+        </ul>
+</div>
+<div class="" style="padding-top:20px; padding-left:25px;">
+<h1>My Story</h1>
+</div>
+
+<hr>
+
+<% if @stories.empty? %>
+<center><h5>Oh no! You have no stories yet!</h5></center>
+<center><%= link_to 'Create First Story', new_story_path(current_user), class: 'button warning' %></center>
+<% end %>
+
+    <% @stories.each do |story| %>
+    <%= link_to story do %>
+     <div class="row story-link" style="padding:30px;">
+     <div class="large-10 small-12 columns">
+        <h5><%= story.title.capitalize %></h5>
+         <p><%= truncate(story.description.capitalize, length:150) %></p>
+
+
+       <div class="right">  <%= link_to 'Show', story %>
+      
+        </div>
+        
+
+     </div>
+
+     <div class="large-2 small-12 columns">
+        <div class="right" style="color:rgb(170,170,170); font-weight:bolder;"><%= time_ago_in_words(story.created_at) %>
+        <br>
+        <span style="color:rgb(170,170,170); font-size:0.8em;">In <%= story.place %></span>
+        </div>
+     </div>
+       
+       
+       
+        <hr>
+       
+     
+     </div>
+
+     <% end %>
+    <% end %>
+ 
+
+
+</div>

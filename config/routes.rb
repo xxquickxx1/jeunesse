@@ -2,6 +2,22 @@ Rails.application.routes.draw do
  
  
 
+  get '/manage-stories', to: 'stories#manage', as: :manage_stories
+  resources :stories
+  get 'my-account', to: 'account#index', as: :account
+
+  get 'account/show'
+
+ devise_for :users, :skip => [:sessions]
+as :user do
+  get 'sign-in' => 'devise/sessions#new', :as => :new_user_session
+  post 'sign-in' => 'devise/sessions#create', :as => :user_session
+  delete 'sign-out' => 'devise/sessions#destroy', :as => :destroy_user_session
+  get 'sign-up' => 'devise/registrations#new', :as => :new_registration
+  post 'sign-up' => 'devise/registrations#create'
+  get '/forgot_password' => 'devise/passwords#new', :as => :forgot_password
+  post '/resend-password' => 'devise/passwords#create', as: :resend_password
+end
   # This line mounts Refinery's routes at the root of your application.
 
   # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.

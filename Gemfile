@@ -66,4 +66,6 @@ gem 'refinerycms-portfolio', github: 'refinery/refinerycms-portfolio', branch: '
 gem 'foundation-rails'
 
 gem 'simple_form'
+gem "cancan"
+gem 'devise'
 

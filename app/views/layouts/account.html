@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500,700,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
+
+
+  
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+
+   <%= display_meta_tags %>
+
+<style type="text/css">
+  .top-bar-section .dropdown{
+    position: relative !important;
+    overflow: visible;
+    min-height: 48px;
+  }
+
+  .top-bar{
+    margin-bottom: 0px;
+  }
+
+  .f-dropdown li a:hover{
+    background-color: rgb(245,245,245);
+  }
+
+  a.logo-account:hover{
+    background-color: white;
+    color:rgb(250,250,250);
+  }
+</style>
+  </head>
+
+
+
+
+
+  <body class="library">
+  
+<div class="fixed top-nav-fixed">
+<div class="row">
+  <nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+   <li class="name">
+      <h1>
+        
+
+     <a href="/my-account" style="z-index:999;" class="logo-account"><h3>Jeunesse Diamonds</h3></a>
+        
+        
+      </h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+
+
+  <section class="top-bar-section">
+
+  <nav id="menu" class="">
+    <ul class="">
+        <li class="disabled"><%= link_to current_user.email, account_path %></li>
+    <li> <a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="dropdown" style="color:rgb(200,200,200);">
+  <i class="fa fa-user fa-2x"></i>
+</a><br>
+<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+  <li><%= link_to 'Dashboard', account_path %></li>
+  <li><a href="#">This is another</a></li>
+  <% if user_signed_in? %>
+            <li style="border-top:solid 1px lightgrey;">
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            </li>
+ 
+          <% end %>
+</ul>
+</li>
+
+
+          
+
+
+   </ul>
+
+  </nav>
+
+   
+  </section>
+
+
+</nav>
+</div>
+</div>
+
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key, class: 'message' %>
+<% end %>
+
+
+    <%= yield %>
+
+
+
+
+
+<script>
+$('div.message').delay(5000).fadeOut(400);
+
+</script>
+
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62289984-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+  </body>
+</html>

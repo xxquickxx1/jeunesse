@@ -1,0 +1,95 @@
+
+<br><br>
+
+
+<div class="row" style="margin-top:100px; border-bottom:solid 1px lightgrey;">
+
+		<div class="small-4 large-4 columns">
+			<h4>Dashboard</h4>
+			<span><h6>Stories: <span class="green"><%= current_user.stories.count %></span></h6></span>
+		</div>
+
+		<div class="small-8 large-8 columns">
+			
+
+				<button href="#" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false" class="dropdown button primary right">
+				 Your Story
+				</button><br>
+				<ul id="drop2" data-dropdown-content class="f-dropdown" aria-hidden="true">
+				  <li> <%= link_to 'Write story', new_story_path(current_user) %></li>
+
+				  <li><%= link_to 'Stories', stories_path(current_user) %></li>
+				  <li><%= link_to 'Manage stories', manage_stories_path(current_user) %></li>
+
+				</ul>
+
+
+		</div>
+</div>
+
+<div class="row course" style="padding:30px 30px">
+<h5>Get started</h5>
+<hr>
+
+	<% if current_user.stories.count == 0 %>
+	<div>
+		<div class="small-2 large-2 columns text-center" style="padding-bottom:20px;">
+			<div class="dashboard-icon"><i class="fa fa-book fa-3x"></i></div>
+		</div>
+
+		<div class="small-8 large-8 columns">
+			<h5>Create your first story</h5>
+			<p>Lists are where you store your contacts (we call them subscribers). Import your list to get started. learn more</p>
+		</div>
+
+		<div class="small-2 large-2 columns">
+				<%= link_to 'Create story', new_story_path, class: 'button secondary right' %>
+		</div>
+		<hr>
+	</div>
+
+	<% end %>
+
+
+	<div>
+		<div class="small-2 large-2 columns text-center" style="padding-bottom:20px;">
+			<div class="dashboard-icon"><i class="fa fa-pencil fa-3x"></i></div>
+		</div>
+
+		<div class="small-8 large-8 columns">
+			<h5>Write a blog</h5>
+			<p>Lists are where you store your contacts (we call them subscribers). Import your list to get started. learn more</p>
+		</div>
+
+		<div class="small-2 large-2 columns">
+				<button class="button secondary right">Start blog</button>
+		</div>
+		<hr>
+	</div>
+
+	<div>
+		<div class="small-2 large-2 columns text-center" style="padding-bottom:20px;">
+			<div class="dashboard-icon"><i class="fa fa-road fa-3x"></i></div>
+		</div>
+
+		<div class="small-8 large-8 columns">
+			<h5>Choose learn path</h5>
+			<p>Lists are where you store your contacts (we call them subscribers). Import your list to get started. learn more</p>
+		</div>
+
+		<div class="small-2 large-2 columns">
+				<button class="button secondary right">Start learning</button>
+		</div>
+		<hr>
+	</div>
+
+
+
+	<div class="row">
+<br><br>
+			<h4>Need any help? Let us know</h4>
+<br><br><br><br>
+	</div>
+
+
+</div>

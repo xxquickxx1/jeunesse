@@ -1,0 +1,23 @@
+<div class="row course" style="padding:40px">
+	<h3>  <%= @story.title %></h3>
+	<hr>
+
+<p>
+
+  <%= @story.description %>
+</p>
+
+<hr>
+<p>
+  <%= @story.place %>
+</p>
+
+<div class="right">
+<%= link_to 'Back', stories_path %> | 
+	<% if user_signed_in? %>
+<%= link_to 'Edit', edit_story_path(@story) %> 
+<% end %>
+</div>
+
+
+</div>

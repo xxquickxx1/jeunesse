@@ -1,0 +1,56 @@
+
+
+<br><br><br><br>
+
+ <div class="wrapper">
+	<div class="container">
+		<h1>Log In</h1>
+		
+<p class="notice" style="color:white; font-weight:bolder;"><%= notice %></p>
+<p class="alert" style="color:white; font-weight:bolder;"><%= alert %></p>
+
+
+
+		
+
+<%= simple_form_for @user, url: user_session_path, method: :post, html_input: {class: 'form'} do |f| %>
+<%= f.error_notification %>
+
+    <%= f.input :email, required: true, label: false, placeholder: "Email" %>
+    <%= f.input :password, required: true, label: false, placeholder: "Password" %>
+ 
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+
+
+
+    <%= f.button :submit, "Log in", id: "login-button" %>
+
+
+
+
+<%= render "devise/shared/links" %>
+<% end %>
+
+
+
+
+
+	</div>
+	
+<br><br><br><br><br><br><br>
+
+
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
