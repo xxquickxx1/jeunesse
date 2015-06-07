@@ -77,7 +77,7 @@ class UserblogsController < ApplicationController
       @template = current_user.templates.find(params[:template_id])
     end
     def set_userblog
-      @userblog = @template.userblogs.find(params[:id])
+      @userblog = @template.userblogs.friendly.find(params[:id])
     end
 
 

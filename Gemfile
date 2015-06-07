@@ -69,3 +69,5 @@ gem 'simple_form'
 gem "cancan"
 gem 'devise'
 gem 'foundation-wysihtml5-rails'
+gem 'friendly_id', '~> 5.1.0'
+gem 'whenever', :require => false
