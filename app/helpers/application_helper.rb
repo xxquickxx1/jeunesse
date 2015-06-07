@@ -17,7 +17,17 @@ def footer_menu
 end
 
 
+def is_admin?(object)
+    if object.admin == true
+      true
+    else
+      false
+    end
+end
 
+def authenticate_admin(object)
+    redirect_to root_url if current_user.admin == false || current_user.admin == nil
+end
 
 
 end

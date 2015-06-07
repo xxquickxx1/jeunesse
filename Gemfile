@@ -68,4 +68,4 @@ gem 'foundation-rails'
 gem 'simple_form'
 gem "cancan"
 gem 'devise'
-
+gem 'foundation-wysihtml5-rails'

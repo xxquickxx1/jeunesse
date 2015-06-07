@@ -28,7 +28,7 @@
      <div class="row story-link" style="padding:30px;">
      <div class="large-10 small-12 columns">
         <h5><%= story.title.capitalize %></h5>
-         <p><%= truncate(story.description.capitalize, length:150) %></p>
+         <p><%=raw truncate(story.description.capitalize.gsub(/<[^>]*>/ui,''), length:100) %></p>
 
 
        <div class="right">  <%= link_to 'Show', story %>

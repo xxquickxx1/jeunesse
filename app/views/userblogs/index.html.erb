@@ -1,0 +1,44 @@
+
+<div class="row" style="margin-top:120px; margin-bottom:-50px;">
+<div class="right"><%= link_to 'New Post', new_template_userblog_path, class: 'button primary' %></div>
+<%= link_to 'Blogs', templates_path(current_user), class: 'button success' %>
+</div>
+<div class="row course">
+
+<% if @userblogs.empty? %>
+
+<div style="padding:40px;"><h4>Oh no! You have no blog posts yet!</h4></div>
+<% end %>
+
+
+<center><h1 style="padding-top:6px;">Latest Posts for <%= @template.title.capitalize %> blog</h1> </center>
+<hr>
+    <% @userblogs.each do |userblog| %>
+    <%= link_to template_userblog_path(@template, userblog) do %>
+      <div class="" style="padding:30px;">
+
+      <div class="right">
+      <%= link_to 'Preview', template_userblog_path(userblog, template_id: @template) %>
+        <%= link_to 'Edit', edit_template_userblog_path(id: userblog, template_id: @template) %>
+        <%= link_to 'Destroy', template_userblog_path(id: userblog, template_id: @template), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+
+
+          <h5><%= userblog.title.capitalize %></h5>
+        <p> <%= userblog.intro.capitalize %></p>
+      </div>
+        <% end %>
+        
+        
+       <div class="right">
+     <span class="tags"> <%= userblog.tags %></span>
+       </div>
+         
+      
+    <% end %>
+
+<br>
+
+
+
+</div>

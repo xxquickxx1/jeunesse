@@ -15,7 +15,7 @@
  *= require refinery/theme
  *= require_self
  *= require foundation_and_overrides
-
+*= require foundation-wysihtml5
  */
 
 
@@ -902,4 +902,92 @@ div#alert{
 div.message{
 	margin-top:80px; 
 	padding:15px 30px;
+}
+
+.wysihtml5{
+	height: 300px;
+}
+
+span.tags{
+	font-weight: bolder;
+	font-family: "Varela";
+	color:rgb(160,160,160);
+	padding-right: 50px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+ul.template-grid li{
+	margin:40px 0px; 
+}
+
+
+ul.template-grid li:last-child{
+}
+
+ul.template-grid li.item{
+	background-color: white;
+	min-height: 200px;
+	position: relative;
+	padding-top:20px;
+}
+
+ul.template-grid li.add-new-template{
+	min-height: 200px;
+	background-color: rgb(248, 248, 248);
+	-webkit-transition:all ease-in-out .4s;
+	transition: all ease-in-out .4s;
+	-o-transition:all ease-in-out .4s;
+	-khtml-transition: all ease-in-out .4s;
+}
+
+ul.template-grid li.add-new-template:hover{
+	background-color: white;
+}
+
+
+ul.template-grid li.add-new-template i.fa-plus{
+	margin-top:60px;
+}
+
+ul.template-grid li.item{
+	-webkit-transition: all ease-in-out .4s;
+	-o-transition:all ease-in-out .4s;
+	-moz-transition: all ease-in-out .4s;
+	transition: all ease-in-out .4s;
+}
+
+ul.template-grid li.item:hover{
+	background-color: rgb(250,250,250);
+}
+
+ul.template-grid li:nth-child(2n+0){
+	border-right: solid 1px lightgrey;
+	padding-right: -2px;
+}
+
+.course-heading{
+	width: 100%;
+	color:white;
+	padding: 10px 20px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.course-body-admin{
+	-webkit-transition: all ease-in-out .4s;
+	-moz-transition: all ease-in-out .4s;
+	-o-transition: all ease-in-out .4s;
+	transition: all ease-in-out .4s;
+	min-height: 100px;
+	padding:20px 10px;
+	background-color: white;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom: solid 1px lightgrey;
+	box-shadow:0px 3px 4px lightgrey;
+}
+
+.course-body:hover{
+	box-shadow: 0px 3px 8px #999;
 }

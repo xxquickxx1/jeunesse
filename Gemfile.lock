@@ -273,6 +273,8 @@ GEM
     foundation-rails (5.5.2.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
+    foundation-wysihtml5-rails (1.0.0)
+      railties (>= 3.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.3.5)
@@ -421,6 +423,7 @@ DEPENDENCIES
   dragonfly-s3_data_store
   fog
   foundation-rails
+  foundation-wysihtml5-rails
   jbuilder (~> 2.0)
   jquery-rails
   meta-tags

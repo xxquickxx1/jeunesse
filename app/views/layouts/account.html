@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
 
-
+<%= set_meta_tags :title => @page_title, :reverse => true, :site => 'Jeunesse Diamonds' %>
   
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -36,6 +36,17 @@
     background-color: white;
     color:rgb(250,250,250);
   }
+
+
+/*Course items*/
+
+ul.template-grid li.course-item{
+  min-height: 200px;
+  position: relative;
+  padding-top:20px;
+}
+
+
 </style>
   </head>
 
@@ -68,13 +79,13 @@
 
   <nav id="menu" class="">
     <ul class="">
+    <li><%= link_to 'Learn', courses_path %></li>
         <li class="disabled"><%= link_to current_user.email, account_path %></li>
     <li> <a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="dropdown" style="color:rgb(200,200,200);">
   <i class="fa fa-user fa-2x"></i>
 </a><br>
 <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
   <li><%= link_to 'Dashboard', account_path %></li>
-  <li><a href="#">This is another</a></li>
   <% if user_signed_in? %>
             <li style="border-top:solid 1px lightgrey;">
             <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
@@ -116,7 +127,11 @@ $('div.message').delay(5000).fadeOut(400);
 
 </script>
 
-
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.wysihtml5').wysihtml5();
+  })
+</script>
 
 
 

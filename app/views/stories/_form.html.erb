@@ -20,8 +20,9 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'wysihtml5' %>
   </div>
   <div class="field">
     <%= f.label :place %><br>
@@ -32,3 +33,5 @@
   </div>
 <% end %>
 </div>
+
+

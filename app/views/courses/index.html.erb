@@ -1,0 +1,41 @@
+
+<div class="row" style="padding:40px;">
+
+      <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 template-grid">
+
+
+      
+
+    <% @courses.each do |course| %>
+     
+          
+
+    <% if course.publish == true %>
+    <%= link_to course_courseitems_path(course) do %>
+       <li class="course-item">
+
+             <div class="course-heading" style='background-color: #<%= course.color %>;'>
+              <h6 style="color:white;"><%= course.category %></h6>
+          </div>
+
+            <div class="course-body-admin">
+            <h4><%= course.title %></h4>
+            <p> <%= course.intro %></p>
+
+            <% if is_admin?(current_user) %>
+
+<%= link_to 'New Course', new_course_path %>
+<%= link_to 'Show', course %>
+        <%= link_to 'Edit', edit_course_path(course) %>
+        <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+         
+             </div>
+         
+          <% end %>
+        <% end %>
+  </li>
+    <% end %>
+</ul>
+
+</div>

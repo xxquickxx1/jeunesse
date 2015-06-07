@@ -2,11 +2,22 @@ Rails.application.routes.draw do
  
  
 
+ 
+  resources :courses do 
+       resources :courseitems
+  end
+  get '/tracks', to: 'tracks#index', as: :tracks
+  get '/tracks/:title', to: 'tracks#show', as: :track
+
+  resources :templates do 
+    resources :userblogs
+  end
   get '/manage-stories', to: 'stories#manage', as: :manage_stories
   resources :stories
   get 'my-account', to: 'account#index', as: :account
 
   get 'account/show'
+
 
  devise_for :users, :skip => [:sessions]
 as :user do

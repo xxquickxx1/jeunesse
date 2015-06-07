@@ -1,0 +1,41 @@
+   
+     
+
+<div class="row course" style="padding:30px 30px">
+<h5><%= @course.category %></h5>
+<hr>
+
+ <% @courseitems.each do |courseitem| %>
+<%= link_to course_courseitem_path(@course, courseitem) do %>
+
+  <div>
+    <div class="small-2 large-2 columns text-center" style="padding-bottom:20px;">
+      <img src="<%= courseitem.image %>"></div>
+    </div>
+
+    <div class="small-8 large-8 columns">
+      <h5><%= courseitem.title %></h5>
+      <p><%= courseitem.intro %></p>
+
+      
+    </div>
+
+    <div class="small-2 large-2 columns">
+    <div class="right">
+      <span style="color:lightgrey; font-weight:bolder; font-size:1.2em;"><%= courseitem.time %></span><br>
+      <% if is_admin?(current_user) %>
+      <%= link_to 'New Courseitem', new_course_courseitem_path %>
+       <%= link_to 'Show', course_courseitem_path(@course, courseitem) %>
+        <%= link_to 'Edit', edit_course_courseitem_path(@course, courseitem) %>
+        <%= link_to 'Destroy', course_courseitem_path(@course, courseitem), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </div>
+    </div>
+    <hr>
+  </div>
+
+
+  <% end %>
+    
+    <% end %>
+

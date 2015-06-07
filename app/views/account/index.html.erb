@@ -7,12 +7,14 @@
 		<div class="small-4 large-4 columns">
 			<h4>Dashboard</h4>
 			<span><h6>Stories: <span class="green"><%= current_user.stories.count %></span></h6></span>
+			<span><h6>Blogs: <span class="green"><%= current_user.templates.count %></span></h6></span>
+			<span><h6>Posts: <span class="green"><%= current_user.userblogs.count %></span></h6></span>
 		</div>
 
 		<div class="small-8 large-8 columns">
 			
 
-				<button href="#" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false" class="dropdown button primary right">
+				<button href="#" data-dropdown="drop2" aria-controls="drop2" aria-expanded="false" class="dropdown button primary right" style="margin-left:20px;">
 				 Your Story
 				</button><br>
 				<ul id="drop2" data-dropdown-content class="f-dropdown" aria-hidden="true">
@@ -20,6 +22,20 @@
 
 				  <li><%= link_to 'Stories', stories_path(current_user) %></li>
 				  <li><%= link_to 'Manage stories', manage_stories_path(current_user) %></li>
+
+				</ul>
+
+
+
+				<button href="#" data-dropdown="drop3" aria-controls="drop3" aria-expanded="false" class="dropdown button warning right" style="margin-top:-23px;">
+				 Your Blog
+				</button><br>
+				<ul id="drop3" data-dropdown-content class="f-dropdown" aria-hidden="true">
+
+				  <li> <%= link_to 'Write post', templates_path(current_user) %></li>
+
+				  <li><%= link_to 'Posts', stories_path(current_user) %></li>
+				  <li><%= link_to 'Manage posts', manage_stories_path(current_user) %></li>
 
 				</ul>
 
@@ -50,7 +66,7 @@
 
 	<% end %>
 
-
+	<% if current_user.templates.count == 0 %>
 	<div>
 		<div class="small-2 large-2 columns text-center" style="padding-bottom:20px;">
 			<div class="dashboard-icon"><i class="fa fa-pencil fa-3x"></i></div>
@@ -62,10 +78,13 @@
 		</div>
 
 		<div class="small-2 large-2 columns">
-				<button class="button secondary right">Start blog</button>
+				
+				<%= link_to 'Start blog', templates_path(current_user), class: 'button secondary' %>
 		</div>
 		<hr>
 	</div>
+
+	<% end %>
 
 	<div>
 		<div class="small-2 large-2 columns text-center" style="padding-bottom:20px;">
@@ -78,7 +97,7 @@
 		</div>
 
 		<div class="small-2 large-2 columns">
-				<button class="button secondary right">Start learning</button>
+				<%= link_to 'Start learning', courses_path, class: 'button secondary' %>
 		</div>
 		<hr>
 	</div>

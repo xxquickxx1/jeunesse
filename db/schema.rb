@@ -11,25 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605171916) do
+ActiveRecord::Schema.define(version: 20150606193102) do
 
-  create_table "members", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "courseitems", force: :cascade do |t|
+    t.string   "title"
+    t.text     "intro"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "publish"
+    t.integer  "course_id"
+    t.text     "description"
+    t.string   "time"
   end
 
-  add_index "members", ["email"], name: "index_members_on_email", unique: true
-  add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  create_table "courses", force: :cascade do |t|
+    t.string   "title"
+    t.text     "intro"
+    t.string   "image"
+    t.string   "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "category"
+    t.boolean  "publish"
+  end
 
   create_table "refinery_blog_categories", force: :cascade do |t|
     t.string   "title"
@@ -469,6 +474,30 @@ ActiveRecord::Schema.define(version: 20150605171916) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
+  create_table "templates", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "category"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "userblogs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "intro"
+    t.text     "description"
+    t.string   "tags"
+    t.string   "seo_title"
+    t.text     "meta_description"
+    t.string   "category"
+    t.string   "user_id"
+    t.integer  "template_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -482,6 +511,7 @@ ActiveRecord::Schema.define(version: 20150605171916) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
