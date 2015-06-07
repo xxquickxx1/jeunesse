@@ -3,6 +3,9 @@ Rails.application.routes.draw do
  
 
  
+  post '/subscribe', to: 'subscription#create', as: :subscribe
+  delete '/unsubscribe', to: 'subscription#destroy', as: :unsubscribe
+
   resources :courses do 
        resources :courseitems
   end

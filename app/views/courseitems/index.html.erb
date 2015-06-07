@@ -3,6 +3,19 @@
 
 <div class="row course" style="padding:30px 30px">
 <h5><%= @course.category %></h5>
+    <div class="right">
+    
+      <% if current_user.subscriptions.where(:course_id => @course).exists? %>
+
+       
+
+<%= button_to 'Unsubscribe', unsubscribe_path(course_id: @course, user_id: current_user.id), class: 'button primary', method: :delete %>
+        <% else %>
+
+         <%= button_to 'Subscribe', subscribe_path(course_id: @course, user_id: current_user.id), class: 'button alert' %>
+
+        <% end %>
+    </div>
 <hr>
 
  <% @courseitems.each do |courseitem| %>

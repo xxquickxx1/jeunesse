@@ -12,5 +12,6 @@ class User < ActiveRecord::Base
          has_many :stories
          has_many :templates
          has_many :userblogs, through: :templates
+         has_many :subscriptions
 
 end

@@ -27,6 +27,13 @@
   .top-bar{
     margin-bottom: 0px;
   }
+  nav#menu ul li a:hover{
+    color:rgb(180,180,180);
+  }
+
+  nav#menu ul li i.fa:hover{
+    color:rgb(180,180,180);
+  }
 
   .f-dropdown li a:hover{
     background-color: rgb(245,245,245);
@@ -64,7 +71,11 @@ ul.template-grid li.course-item{
       <h1>
         
 
-     <a href="/my-account" style="z-index:999;" class="logo-account"><h3>Jeunesse Diamonds</h3></a>
+     <a href="/my-account" style="z-index:999;" class="logo-account"><h3>Jeunesse Diamonds
+     </h3>
+
+    </a>
+
         
         
       </h1>
@@ -80,7 +91,19 @@ ul.template-grid li.course-item{
   <nav id="menu" class="">
     <ul class="">
     <li><%= link_to 'Learn', courses_path %></li>
-        <li class="disabled"><%= link_to current_user.email, account_path %></li>
+
+
+ <li style="margin-right:20px;"> <a href="#" data-dropdown="drop4" aria-controls="drop4" aria-expanded="false" class="dropdown" style="color:rgb(200,200,200);">
+  <i class="fa fa-globe fa-2x"></i>
+</a><br>
+<ul id="drop4" data-dropdown-content class="f-dropdown" aria-hidden="true">
+  <li>hello</li>
+</ul>
+
+</li>
+
+
+       
     <li> <a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="dropdown" style="color:rgb(200,200,200);">
   <i class="fa fa-user fa-2x"></i>
 </a><br>
