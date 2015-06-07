@@ -30,6 +30,7 @@ class CourseitemsController < ApplicationController
 
     respond_to do |format|
       if @courseitem.save
+                  Notification.create(notiable_id: @courseitem.id, notiable_type: controller_name.classify, notiable_foreign: @course.id)
         format.html { redirect_to course_courseitems_path(@course), notice: 'Courseitem was successfully created.' }
         format.json { render :show, status: :created, location: @courseitem }
       else

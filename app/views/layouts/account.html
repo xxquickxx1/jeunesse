@@ -90,14 +90,53 @@ ul.template-grid li.course-item{
 
   <nav id="menu" class="">
     <ul class="">
-    <li><%= link_to 'Learn', courses_path %></li>
+    <li><%= link_to courses_path do %>
+      <i class="fa fa-book fa-2x"></i>
+    <% end %>
+    </li>
 
 
  <li style="margin-right:20px;"> <a href="#" data-dropdown="drop4" aria-controls="drop4" aria-expanded="false" class="dropdown" style="color:rgb(200,200,200);">
   <i class="fa fa-globe fa-2x"></i>
 </a><br>
-<ul id="drop4" data-dropdown-content class="f-dropdown" aria-hidden="true">
-  <li>hello</li>
+<ul id="drop4" data-dropdown-content class="f-dropdown" aria-hidden="true" style=" min-width:300px;">
+  
+
+
+        <% Notification.all.limit(3).order("created_at desc").each do |t| %>
+
+
+         <% @item = t.notiable_type.camelize.constantize %>
+          <% @h = @item.find(t.notiable_id.to_f) %>
+          <% @n = t.notiable_foreign if t.notiable_foreign %>
+          <li class="notify-<%= t.id %>" style="border-bottom:solid 1px lightgrey;">
+            
+           <span class="small-notify green"><% if t.notiable_type == "Courseitem" %>
+           Episode
+           <% else %>
+           Course
+           <% end %>
+
+           </span>
+        
+            <%= link_to controller: t.notiable_type.pluralize.downcase, action: :show, id: t.notiable_id,course_id: @n do %>
+            <div class="small-3 large-3 columns">
+              <img src="<%= @h.image %>">
+            </div>
+
+            <div class="small-9 large-9 columns">
+              <h5><%= @h.title %></h5>
+            <p><%= truncate(@h.intro, length:30) %></p>
+            </div>
+          <% end %>
+
+          </li>
+
+          
+
+        <% end %>
+
+
 </ul>
 
 </li>

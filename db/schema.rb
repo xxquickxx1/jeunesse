@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607125558) do
+ActiveRecord::Schema.define(version: 20150607175637) do
 
   create_table "courseitems", force: :cascade do |t|
     t.string   "title"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20150607125558) do
     t.datetime "updated_at", null: false
     t.string   "category"
     t.boolean  "publish"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string   "notiable_id"
+    t.string   "notiable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "notiable_foreign"
   end
 
   create_table "refinery_blog_categories", force: :cascade do |t|

@@ -6,6 +6,10 @@
 
 		<div class="small-4 large-4 columns">
 			<h4>Dashboard</h4>
+
+
+
+
 			<span><h6>Stories: <span class="green"><%= current_user.stories.count %></span></h6></span>
 			<span><h6>Blogs: <span class="green"><%= current_user.templates.count %></span></h6></span>
 			<span><h6>Posts: <span class="green"><%= current_user.userblogs.count %></span></h6></span>
@@ -43,9 +47,36 @@
 		</div>
 </div>
 
+<div class="row" style="margin-top:40px;">
+	 <p>Your courses:  <% current_user.subscriptions.each do |s| %>
+	 		<% @c = Course.find(s.course_id.to_f) %>
+	 <%= link_to @c.category, course_path(id: s.course_id), class: 'button success tiny' %>
+	 <% end %>
+
+	 <% if current_user.subscriptions.empty? %>
+	 	No courses yet - <%= link_to 'subscribe now', courses_path %>
+	 <% end %>
+	 </p>
+	 
+</div>
+
 <div class="row course" style="padding:30px 30px">
 <h5>Get started</h5>
 <hr>
+
+<% if current_user.stories.count > 0 && current_user.templates.count > 0 && current_user.subscriptions.count > 0 %>
+<center><p>
+Well Done! You have completed all basic steps
+</p>
+
+<br><br>
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQZWMcNKKeLIfCnx-F3wE38ElQ_hNiZfT8Z-tl_jPC8SnMFaom6SQ">
+
+<h5>Lets build your business!</h5>
+
+</center>
+
+<% end %>
 
 	<% if current_user.stories.count == 0 %>
 	<div>
@@ -86,6 +117,8 @@
 
 	<% end %>
 
+
+		<% if current_user.subscriptions.empty? %>
 	<div>
 		<div class="small-2 large-2 columns text-center" style="padding-bottom:20px;">
 			<div class="dashboard-icon"><i class="fa fa-road fa-3x"></i></div>
@@ -101,13 +134,11 @@
 		</div>
 		<hr>
 	</div>
-
+	<% end %>
 
 
 	<div class="row">
-<br><br>
-			<h4>Need any help? Let us know</h4>
-<br><br><br><br>
+	<br><br><br><br>
 	</div>
 
 
